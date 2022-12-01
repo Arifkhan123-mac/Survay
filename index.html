@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React survay</title>
+<style>
+  #container{
+    background-color:burlywood;
+    justify-content: center;
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  body{
+    background-color: grey;
+  }
+ #heading{
+  text-align: center;
+ }
+ #submit{
+  border-radius: 8px;
+  background-color: royalblue;
+ }
+ .inp{
+  border-radius: 8px;
+ }
+</style>
+  </head>
+<body >
+  <h2 id="heading">React Survay</h2>
+    <div id="container"> 
+
+      <label>First Name</label>
+      <input type="text" id="First" class="inp"><br><br>
+    <label>Last Name</label>
+    <input type="text" id="Last" class="inp"><br><br>
+    <label>Username</label>
+    <input id="Username" type="text"class="inp"><br><br>
+    <label>Email</label>
+    <input type="Email" id="Email"class="inp"><br><br>
+    <label>Contact</label>
+    <input type="number" id="Contact"class="inp"><br><br>
+    <label>Postal Code</label>
+    <input type="number" id="Postal"class="inp"><br><br>
+  <button type="submit"onclick="ans()" id="submit" >Submit</button>  
+</div>
+    
+    <script>
+      function ans(){
+        var First = document.getElementById("First");
+        var Last = document.getElementById("Last");
+        var Username = document.getElementById("Username");
+        var Email = document.getElementById("Email");
+       var Contact = document.getElementById("Contact");
+       var Postal = document.getElementById("Postal");
+        var letter =   /^[A-Za-z]+$/;
+       var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+       var phoneno = /^\d{10}$/;
+        if(First.value==""|| /\s/g.test(First.value)){
+        alert( "Enter valid first name!" )
+      } 
+      if(Last.value==""|| /\s/g.test(Last.value))
+        alert("Enter valid last name!")
+        if (Username.value.match(letter)){
+             alert("Enter valid username!")
+        }
+if(!Email.value.match(mailformat)){
+  alert("Enter valid email!");
+}
+  if(!Contact.value.match(phoneno)){
+    alert ("Enter valid contact!");
+  }
+  if(Postal.value.length>6 || Postal.value.length<6){
+    alert("enter valid postal")
+  }
+  else{
+    alert("Submitted");
+  }
+    }
+
+
+
+</script>
+
+</body>
+</html>
